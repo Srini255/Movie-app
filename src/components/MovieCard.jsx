@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React from 'react';
 export const MovieCard = ({movie:{title,id,vote_average,release_date,original_language,poster_path}}) => {
   return (
     <div className="movie-card" id={id} onClick={()=>window.location.href=`/movie/${id}`}>

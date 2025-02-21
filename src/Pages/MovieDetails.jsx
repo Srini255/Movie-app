@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { MovieCard } from '../components/MovieCard';
+import { useNavigate } from 'react-router-dom';
 
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -16,6 +17,7 @@ const API_OPTIONS = {
 const MovieDetails = () => {
     const { id } = useParams();
     const [movieDetails, setMovieDetails] = useState({});
+    const Navigate=useNavigate();
     const FetchMovieDetails = async () => {
         const response = await fetch(`${API_BASE_URL}/movie/${id}`, API_OPTIONS);
         const data = await response.json();
@@ -30,10 +32,13 @@ const MovieDetails = () => {
     return (
         <div>
             <div className="pattern" />
-            <div className="wrapper"></div>
+            <div className="wrapper">
+                <button onClick={()=>Navigate('/')}>Back</button>
             {movieDetails && (
                 <MovieCard movie={movieDetails} key={movieDetails.id} />
             )}
+            </div>
+           
         </div>
     );
 };
