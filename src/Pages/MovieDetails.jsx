@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { MovieCard } from '../components/MovieCard';
+import { MovieImage } from '../components/MovieImage';
 import { useNavigate } from 'react-router-dom';
 
 const API_BASE_URL = 'https://api.themoviedb.org/3';
@@ -30,12 +30,18 @@ const MovieDetails = () => {
     }, [id]);
 
     return (
-        <div>
+        <div className="movie-details">
             <div className="pattern" />
             <div className="wrapper">
-                <button onClick={()=>Navigate('/')}>Back</button>
+            <div>
+                <button className="Back" onClick={()=>Navigate('/')}>Back</button>
+            </div>
             {movieDetails && (
-                <MovieCard movie={movieDetails} key={movieDetails.id} />
+              <div className="MovieDetails">
+                <h2>{movieDetails.title}</h2>
+                <MovieImage movie={movieDetails} />
+                <p>{movieDetails.overview}</p>
+              </div>
             )}
             </div>
            

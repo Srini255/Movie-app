@@ -140,6 +140,67 @@
       @apply text-gray-100 font-medium text-base;
     }
   }
+
+  .movie-details {
+    @apply flex flex-col items-center justify-center min-h-screen bg-primary text-white;
+  }
+
+  .movie-details .Back {
+    @apply absolute top-0 left-0;
+  }
+
+  .movie-details .wrapper {
+    @apply flex flex-col items-center;
+  }
+  .movie-details .movie-card {
+    @apply min-h-30 min-w-20;
+  }
+
+  .movie-details .pattern{
+    @apply top-0;
+  }
+  .MovieDetails{
+    @apply flex flex-col items-center justify-center min-h-screen text-white;
+
+    & h1{
+      @apply text-gradient text-3xl;
+    }
+  }
+  .movie-image{
+    & img{
+      @apply w-full h-auto rounded-lg;
+    }
+    & .content {
+      @apply mt-2 flex flex-row items-center justify-center flex-wrap gap-5;
+    }
+
+    & .rating {
+      @apply flex flex-row items-center gap-1;
+    }
+
+    & .rating img {
+      @apply size-5 object-contain;
+    }
+
+    & .rating p {
+      @apply font-bold text-base text-white;
+    }
+
+    & .content span {
+      @apply text-sm text-gray-100;
+    }
+
+    & .content .lang {
+      @apply capitalize text-gray-100 font-medium text-base;
+    }
+
+    & .content .year {
+      @apply text-gray-100 font-medium text-base;
+    }
+  }
+  .genres{
+    @apply flex flex-row items-center gap-2 ;
+  }
 }
 
 @utility text-gradient {

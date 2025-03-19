@@ -1,4 +1,5 @@
 import React from 'react';
+import star from '../assets/star.svg';
 export const MovieCard = ({movie:{title,id,vote_average,release_date,original_language,poster_path}}) => {
   return (
     <div className="movie-card" id={id} onClick={()=>window.location.href=`/movie/${id}`}>
@@ -7,7 +8,7 @@ export const MovieCard = ({movie:{title,id,vote_average,release_date,original_la
         <h3>{title}</h3>
         <div className="content">
           <div className="rating">
-            <img src="star.svg" alt="star icon" />
+            <img src={star} alt="star icon" />
             <p>{vote_average?vote_average.toFixed(1):'N/A'}</p>
           </div>
 
