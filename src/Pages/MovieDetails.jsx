@@ -32,14 +32,15 @@ const MovieDetails = () => {
     return (
         <div className="movie-details">
             <div className="pattern" />
-            <div className="wrapper">
-            <div>
-                <button className="Back" onClick={()=>Navigate('/')}>Back</button>
+            <div className="back">
+                <button className="back-btn" onClick={()=>Navigate('/')}>Back</button>
             </div>
+            <div className="wrapper">
             {movieDetails && (
               <div className="MovieDetails">
                 <h2>{movieDetails.title}</h2>
                 <MovieImage movie={movieDetails} />
+                <hr/>
                 <p>{movieDetails.overview}</p>
               </div>
             )}

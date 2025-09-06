@@ -2,8 +2,8 @@ import React from 'react';
 import star from '../assets/star.svg';
 export const MovieImage= ({movie:{title,id,vote_average,release_date,original_language,poster_path,origin_country,genres,status}}) => {
   return (
-    <div className="movie-image" id={id} onClick={()=>window.location.href=`/movie/${id}`}>
-      <img src={poster_path?`https://image.tmdb.org/t/p/w500/${poster_path}`:'/no-movie.png'} alt={title}/>
+    <div className="movie-image" id={id} >
+      <img onClick={()=>window.location.href=`/movie/${id}`} src={poster_path?`https://image.tmdb.org/t/p/w500/${poster_path}`:'/no-movie.png'} alt={title}/>
       <div className="mt-4">
         <div className="content">
                   <div className="rating">
